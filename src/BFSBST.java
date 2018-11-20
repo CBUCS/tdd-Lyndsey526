@@ -8,7 +8,7 @@ public class BFSBST<T extends Comparable<T>> extends BinarySearchTree<T> impleme
 {
     public BFSBST()
     {
-
+        super();
     }
 
     //printout BFS version of the tree
