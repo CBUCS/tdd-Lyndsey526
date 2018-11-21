@@ -23,8 +23,12 @@ public class Basket implements Visitor {
 
         return total;
     }
-    public double getTotalPrice() {
-        return 0.0D;
+    public double getTotalPrice()
+    {
+        double total = 0.0;
+        for(int i = 0; i < list.size(); i++)
+            total += list.get(i).accept(this, 1);
+        return total;
     }
     public double visitPrice(Produce p) {
         return p instanceof Apple ? ((Apple)p).getPrice() : 0.0D;
