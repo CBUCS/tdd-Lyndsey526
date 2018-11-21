@@ -7,8 +7,6 @@ https://www.geeksforgeeks.org/binary-search-tree-data-structure/
  */
 public abstract class BinarySearchTree<T extends Comparable<T>> implements Tree<T>,java.io.Serializable
 {
-    //printout BFS version of the tree
-    public abstract void traverse();
 
     public class TreeNode<T> implements java.io.Serializable
     {
