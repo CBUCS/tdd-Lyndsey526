@@ -3,11 +3,14 @@ Lyndsey Wilson
 ID#684781
 
  */
-public class Basket implements Visitor
-{
-    public double getTotalWeight() { return 0.0; }
-    public double getTotalPrice() { return 0.0; }
+import java.util.ArrayList;
 
-    @Override
-    public void visit(Produce node) { }
-}
+public class Basket implements Visitor {
+    private ArrayList<Produce> list = new ArrayList();
+
+    public Basket() {
+    }
+
+    public void addToBasket(Produce p) {
+        this.list.add(p);
+    }
