@@ -37,7 +37,7 @@ public abstract class BinarySearchTree<T extends Comparable<T>> implements Tree<
     public void remove(T item)
     {
 
-        }
+    }
 
     //find a specific tree node that contains item
     public boolean find(T item)
