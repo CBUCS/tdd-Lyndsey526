@@ -3,10 +3,20 @@ Lyndsey Wilson
 ID#684781
 
  */
-public class Apple extends Fruit implements Visitable {
-    @Override
-    public double accept(Visitor v, int type) {
-        return 0.0;
+public class Apple extends Fruit {
+    public Apple() {
+    }
+
+    public String getName() {
+        return "Apple";
+    }
+
+    public double getPrice() {
+        return 1.99D;
+    }
+
+    public double getWeight() {
+        return 0.75D;
     }
 }
 
