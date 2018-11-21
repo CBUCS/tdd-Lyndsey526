@@ -45,12 +45,44 @@ public abstract class BinarySearchTree<T extends Comparable<T>> implements Tree<
         root = insertHelper(root, value);
     }
 
+        //removes item from tree and replaces with the bottom right most element
+        public void remove(T item) {
+            TreeNode<T> ptr = root, before = null;
+            while (ptr != null && ptr.value != item) {
+                before = ptr;
+                if (item.compareTo(ptr.value) < 0)
+                    ptr = ptr.left;
+                else
+                    ptr = ptr.right;
+            }
+            if (ptr == null)
+                return;
 
-    //removes item from tree and replaces with the bottom right most element
-    public void remove(T item)
-    {
-
-    }
+            if (ptr.left == null && ptr.right == null) {
+                if (before.left == ptr)
+                    before.left = null;
+                else
+                    before.right = null;
+            } else if (ptr.left == null) {
+                if (before.left == ptr)
+                    before.left = ptr.right;
+                else
+                    before.right = ptr.right;
+            } else if (ptr.right == null) {
+                if (before.left == ptr)
+                    before.left = ptr.left;
+                else
+                    before.right = ptr.left;
+            } else {
+                TreeNode<T> max = ptr.left, beforeMax = ptr;
+                while (max.right != null) {
+                    beforeMax = max;
+                    max = max.right;
+                }
+                ptr.value = max.value;
+                beforeMax.right = max.left;
+            }
+        }
 
     //find a specific tree node that contains item
     public boolean find(T item)
