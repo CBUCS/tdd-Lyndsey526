@@ -14,6 +14,7 @@ public class Basket implements Visitor {
     public void addToBasket(Produce p) {
         this.list.add(p);
     }
+
     public double getTotalWeight() {
         double total = 0.0D;
 
@@ -23,35 +24,36 @@ public class Basket implements Visitor {
 
         return total;
     }
-    public double getTotalPrice()
-    {
-        double total = 0.0;
-        for(int i = 0; i < list.size(); i++)
-            total += list.get(i).accept(this, 1);
+
+    public double getTotalPrice() {
+        double total = 0.0D;
+
+        for(int i = 0; i < this.list.size(); ++i) {
+            total += ((Produce)this.list.get(i)).accept(this, 1);
+        }
+
         return total;
     }
 
-    public String getBasketList()
-    {
+    public String getBasketList() {
         String sList = "Basket:\n";
-        for(int i = 0; i < list.size(); i++)
-            sList += list.get(i).accept(this, 2);
+
+        for(int i = 0; i < this.list.size(); ++i) {
+            sList = sList + ((Produce)this.list.get(i)).accept(this, 2);
+        }
+
         return sList;
     }
-    public double visitPrice(Produce p)
-    {
+
+    public double visitPrice(Produce p) {
         return p.getPrice();
     }
 
-    @Override
-    public double visitWeight(Produce p)
-    {
+    public double visitWeight(Produce p) {
         return p.getWeight();
     }
 
-    @Override
-    public String visitNames(Produce p)
-    {
+    public String visitNames(Produce p) {
         return p.getName();
     }
 }

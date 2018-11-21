@@ -3,10 +3,11 @@ Lyndsey Wilson
 ID#684781
 
  */
-public class BasketTest
-{
-    public static void main(String args[])
-    {
+public class BasketTest {
+    public BasketTest() {
+    }
+
+    public static void main(String[] args) {
         Basket basket = new Basket();
         basket.addToBasket(new Apple());
         basket.addToBasket(new Apple());
@@ -19,8 +20,8 @@ public class BasketTest
         basket.addToBasket(new Watermelon());
         basket.addToBasket(new Watermelon());
         basket.addToBasket(new Watermelon());
-        System.out.println("Total Price: " + basket.getTotalPrice());
-        System.out.println("Total Weight: " + basket.getTotalWeight());
+        System.out.printf("Total Price: $%.2f\n", basket.getTotalPrice());
+        System.out.printf("Total Weight: %.2f lb(s)\n\n", basket.getTotalWeight());
         basket.getBasketList();
     }
 }

@@ -3,11 +3,12 @@ Lyndsey Wilson
 ID#684781
 
  */
-public interface Visitor
-{
-    public double visitWeight(Produce p);
-    public double visitPrice(Produce p);
-    public String visitNames(Produce p);
+public interface Visitor {
+    double visitWeight(Produce var1);
+
+    double visitPrice(Produce var1);
+
+    String visitNames(Produce var1);
 }
 
 

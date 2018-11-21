@@ -14,12 +14,12 @@ public class Apple extends Fruit
     @Override
     public double getPrice()
     {
-        return 1.99;
+        return 1.99D;
     }
 
     public double getWeight()
     {
-        return 0.75;
+        return 0.75D;
     }
 }
 

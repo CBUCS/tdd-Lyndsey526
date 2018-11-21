@@ -3,22 +3,19 @@ Lyndsey Wilson
 ID#684781
 
  */
-public class Carrot extends Vegetable implements Visitable
-{
-    @Override
-    public String getName()
-    {
+public class Carrot extends Vegetable implements Visitable {
+    public Carrot() {
+    }
+
+    public String getName() {
         return "Carrot";
     }
 
-    @Override
-    public double getPrice()
-    {
-        return 1.49;
+    public double getPrice() {
+        return 1.49D;
     }
 
-    public double getWeight()
-    {
-        return 0.65;
+    public double getWeight() {
+        return 0.65D;
     }
 }
