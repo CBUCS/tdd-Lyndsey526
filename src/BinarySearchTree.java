@@ -5,7 +5,7 @@ ID#684781
 https://www.geeksforgeeks.org/insertion-binary-tree/
 https://www.geeksforgeeks.org/binary-search-tree-data-structure/
  */
-public abstract class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
+public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
     protected TreeNode<T> root;
 
     public BinarySearchTree() {
@@ -86,3 +86,4 @@ public abstract class BinarySearchTree<T extends Comparable<T>> implements Tree<
         }
     }
 }
+
