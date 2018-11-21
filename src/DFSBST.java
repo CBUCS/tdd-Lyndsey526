@@ -5,6 +5,7 @@ ID#684781
 https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/
  */
 
+import java.util.Queue;
 
 public class DFSBST<T extends Comparable<T>> extends BinarySearchTree<T> implements Visitor<T>
 {

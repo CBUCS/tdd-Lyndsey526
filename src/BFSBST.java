@@ -4,6 +4,9 @@ ID#684781
 
 https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
  */
+
+import java.util.*;
+
 public class BFSBST<T extends Comparable<T>> extends BinarySearchTree<T> implements Visitor<T>
 {
 	public void visit()
