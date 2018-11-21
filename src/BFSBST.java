@@ -11,8 +11,8 @@ public class BFSBST<T extends Comparable<T>> extends BinarySearchTree<T> impleme
 {
 	public void visit()
 	{
-		Queue<TreeNode<T>> queue = new Queue<TreeNode<T>>();
-		queue.enqueue(root);
+        Queue<TreeNode<T>> queue = new LinkedList<TreeNode<T>>();
+        queue.add(root);
 		visit(queue);
 		System.out.println();
 	}
@@ -24,22 +24,19 @@ public class BFSBST<T extends Comparable<T>> extends BinarySearchTree<T> impleme
 	}
 
 	@Override
-public void visit(Queue<TreeNode<T>> queue)
-{
-	if(queue.isEmpty())
-		return;
+    public void visit(Queue<TreeNode<T>> queue) {
+        if (queue.isEmpty())
+            return;
 
-	TreeNode<T> node = queue.dequeue();
-	if(node != null)
-	{
+        TreeNode<T> node = queue.poll();
 		node.accept(this);
 
-		if(node.left != null);
-		queue.enqueue(node.left);
-		if(node.right != null);
-		queue.enqueue(node.right);
+        if (node.left != null)
+            queue.add(node.left);
+        if (node.right != null)
+            queue.add(node.right);
 
 		visit(queue);
 	}
 }
-}
+
