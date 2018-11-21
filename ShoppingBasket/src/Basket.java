@@ -30,6 +30,14 @@ public class Basket implements Visitor {
             total += list.get(i).accept(this, 1);
         return total;
     }
+
+    public String getBasketList()
+    {
+        String sList = "Basket:\n";
+        for(int i = 0; i < list.size(); i++)
+            sList += list.get(i).accept(this, 2);
+        return sList;
+    }
     public double visitPrice(Produce p) {
         return p instanceof Apple ? ((Apple)p).getPrice() : 0.0D;
     }
