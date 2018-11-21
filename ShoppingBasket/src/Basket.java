@@ -26,3 +26,11 @@ public class Basket implements Visitor {
     public double getTotalPrice() {
         return 0.0D;
     }
+    public double visitPrice(Produce p) {
+        return p instanceof Apple ? ((Apple)p).getPrice() : 0.0D;
+    }
+
+    public double visitWeight(Produce p) {
+        return p instanceof Apple ? ((Apple)p).getWeight() : 0.0D;
+    }
+}
