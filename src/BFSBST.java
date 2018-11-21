@@ -12,10 +12,11 @@ public class BFSBST<T extends Comparable<T>> extends BinarySearchTree<T> impleme
         visit(queue);
         System.out.println();
     }
+
+    @Override
+    public void visit(TreeNode<T> node) {
+        System.out.print(node.value + " ");
+    }
+
 }
-
-
-
-
-
 
