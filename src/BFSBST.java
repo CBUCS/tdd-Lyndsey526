@@ -4,19 +4,18 @@ ID#684781
 
 https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
  */
-public class BFSBST<T extends Comparable<T>> extends BinarySearchTree<T> implements java.io.Serializable
-{
-    public BFSBST()
-    {
-        super();
+
+public class BFSBST<T extends Comparable<T>> extends BinarySearchTree<T> implements Visitor<T> {
+    public void visit() {
+        Queue<TreeNode<T>> queue = new Queue<TreeNode<T>>();
+        queue.enqueue(root);
+        visit(queue);
+        System.out.println();
     }
-
-    //printout BFS version of the tree
-    @Override
-    public void traverse()
-    {
-
-    }
-
-
 }
+
+
+
+
+
+
