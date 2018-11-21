@@ -38,11 +38,20 @@ public class Basket implements Visitor {
             sList += list.get(i).accept(this, 2);
         return sList;
     }
-    public double visitPrice(Produce p) {
-        return p instanceof Apple ? ((Apple)p).getPrice() : 0.0D;
+    public double visitPrice(Produce p)
+    {
+        return p.getPrice();
     }
 
-    public double visitWeight(Produce p) {
-        return p instanceof Apple ? ((Apple)p).getWeight() : 0.0D;
+    @Override
+    public double visitWeight(Produce p)
+    {
+        return p.getWeight();
+    }
+
+    @Override
+    public String visitNames(Produce p)
+    {
+        return p.getName();
     }
 }
